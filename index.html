@@ -18,13 +18,18 @@
     <div id="root"></div>
 
     <script type="text/babel">
-      const Hello = () => {
-        const elem = <h1>Welcome in the react World!</h1>; //JSX
-        return elem;
+      const cricketers = ["Sachin", "Virat", "Rohit", "Rahul", "shubhaman"];
+
+      const Main = ({ cricketers }) => {
+        const listItems = cricketers.map((cricketer) => {
+          return <li>{cricketer}</li>;
+        });
+
+        return <ul>{listItems}</ul>;
       };
 
-      const root = ReactDOM.createRoot(document.getElementById('root'));
-      root.render(<Hello />);
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(<Main cricketers={cricketers} />);
     </script>
   </body>
 </html>
